@@ -1,9 +1,10 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    index: './src/index.ts',
   },
   output: {
     path: path.resolve(__dirname, '..', 'build'),
@@ -11,6 +12,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.ts$/i,
+        use: ['ts-loader'],
+      },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -20,6 +25,10 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  resolve: {
+    plugins: [new TsconfigPathsPlugin()],
+    extensions: ['.ts', '.js']
   },
   plugins: [
     new HTMLWebpackPlugin({

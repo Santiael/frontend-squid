@@ -1,6 +1,6 @@
 import './styles.css'
 
-const root = document.getElementById('root')
+const root = document.getElementById('root')!
 
 const hello = document.createElement('h1')
 hello.classList.add('hello')

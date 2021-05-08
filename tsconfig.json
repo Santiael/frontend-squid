@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build",
+    "lib": [
+      "dom",
+      "esnext",
+      "dom.iterable"
+    ],
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true,
+    "strict": true,
+    "removeComments": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+  },
+  "include": ["src"]
+}
